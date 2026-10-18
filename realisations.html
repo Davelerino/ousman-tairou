@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Ousman Tairou — Réalisations</title>
+<meta name="description" content="Réalisations d'Ousman Tairou : affiches, événements, sites web, réseaux sociaux et vidéos.">
+<link rel="icon" href="assets/img/logo.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;700;800&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+body{margin:0;background:#F8F5EF}
+a:hover{opacity:.85}
+</style>
+</head>
+<body>
+<div style="font-family:'DM Sans',system-ui,sans-serif; color:#15171C; background:#F8F5EF; line-height:1.55; width:100%">
+
+<header style="font-family:'DM Sans',system-ui,sans-serif; color:#15171C; background:#F8F5EF; width:100%">
+
+<!-- Bandeau d'annonce d'événement -->
+<div style="background:#15171C; color:#F8F5EF">
+<div style="max-width:1200px; margin:0 auto; padding:10px 20px; display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:6px 16px; font-size:14px">
+<span style="padding:3px 10px; border-radius:999px; background:#F26B1D; color:#15171C; font-weight:700; font-size:12px; letter-spacing:0.06em; text-transform:uppercase">Prochain événement</span>
+<span>[Titre de l'événement] · [Date] · [Lieu]</span>
+<a href="academie.html#prochain" style="color:#FFB48A; font-weight:700; text-underline-offset:3px">Réserver ma place</a>
+</div>
+</div>
+
+<!-- Navigation -->
+<div style="border-bottom:1px solid #E4DFD4">
+<div style="max-width:1200px; margin:0 auto; padding:14px 20px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px 24px">
+<a href="index.html" style="display:flex; align-items:center; gap:12px; text-decoration:none; color:#15171C">
+<img src="assets/img/logo.png" alt="" style="display:block; width:44px; height:44px; object-fit:contain">
+<span style="font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:21px; letter-spacing:-0.01em">Ousman Tairou</span>
+</a>
+<nav aria-label="Navigation principale" style="display:flex; flex-wrap:wrap; align-items:center; gap:4px 28px; font-size:15px; font-weight:500">
+<a href="index.html" aria-current="false" style="color:#15171C; text-decoration:none; padding:10px 0; border-bottom:3px solid transparent">Accueil</a>
+<a href="services.html" aria-current="false" style="color:#15171C; text-decoration:none; padding:10px 0; border-bottom:3px solid transparent">Services</a>
+<a href="realisations.html" aria-current="page" style="color:#15171C; text-decoration:none; padding:10px 0; border-bottom:3px solid #F26B1D">Réalisations</a>
+<a href="academie.html" aria-current="false" style="color:#15171C; text-decoration:none; padding:10px 0; border-bottom:3px solid transparent">Académie</a>
+<a href="a-propos.html" aria-current="false" style="color:#15171C; text-decoration:none; padding:10px 0; border-bottom:3px solid transparent">À propos</a>
+
+</nav>
+<a href="contact.html" style="display:inline-block; box-sizing:border-box; min-height:44px; padding:11px 22px; border-radius:999px; background:#15171C; color:#F8F5EF; font-weight:700; font-size:15px; text-decoration:none">Demander un devis</a>
+</div>
+</div>
+
+</header>
+
+<!-- TITRE DE PAGE -->
+<section style="max-width:1200px; margin:0 auto; padding:72px 20px 24px">
+<p style="margin:0; font-size:13px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#B94207">Réalisations</p>
+<h1 style="margin:14px 0 18px; max-width:820px; font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:clamp(36px,4.6vw,60px); line-height:1.04; letter-spacing:-0.03em">Ce que j'ai créé, avec ceux qui m'ont fait confiance.</h1>
+<p style="margin:0; max-width:640px; font-size:19px; color:#555A63">Affiches, photos d'événements, sites web, réseaux sociaux et vidéos. Filtrez par type de projet.</p>
+</section>
+
+<!-- FILTRES -->
+<section style="max-width:1200px; margin:0 auto; padding:16px 20px 8px">
+<div id="tabs" role="group" aria-label="Filtrer les réalisations" style="display:flex; flex-wrap:wrap; gap:10px"></div>
+</section>
+
+<!-- GALERIE -->
+<section style="max-width:1200px; margin:0 auto; padding:24px 20px 40px">
+<div id="gallery" style="column-width:290px; column-gap:20px"></div>
+</section>
+
+<script>
+(function () {
+  var filter = 'all';
+  var tabDefs = [['all', 'Tout'], ['affiches', 'Affiches et visuels'], ['evenements', 'Événements'], ['web', 'Sites web'], ['reseaux', 'Réseaux sociaux'], ['videos', 'Vidéos']];
+    const aff = (img, title, meta, alt) => ({ cat: 'affiches', img, title, meta, alt });
+    const ev = (img, title, alt) => ({ cat: 'evenements', img, title, meta: 'Masterclass', alt });
+    const ph = (cat, title, meta, ratio) => ({ cat, img: '', title, meta, alt: '', placeholder: '[Visuel à ajouter]', ratio });
+
+    const all = [
+      aff('assets/img/affiche-levelup-2026.jpg', 'Level Up : la jeunesse qui façonnera l’Afrique', 'Affiche · 30 mai 2026', 'Affiche de l’événement Level Up du 30 mai 2026 à l’Hôtel Sarakawa'),
+      ev('assets/img/salle-pleine-1.jpg', 'Salle comble', 'Salle de conférence remplie de participants'),
+      ph('web', '[Nom du client]', 'Site web', '4 / 3'),
+      aff('assets/img/affiche-levelup-idea-2025.jpg', 'Level Up Idea : de l’idée à l’impact', 'Affiche · 29 novembre 2025', 'Affiche de l’événement Level Up Idea du 29 novembre 2025'),
+      ev('assets/img/public-attentif.jpg', 'Un public attentif', 'Participants attentifs assis dans la salle'),
+      ph('videos', '[Nom du client]', 'Vidéo institutionnelle', '16 / 9'),
+      aff('assets/img/affiche-sommet-2025.jpg', 'Sommet Impact Jeunes', 'Affiche · 31 mai 2025', 'Affiche du Sommet Impact Jeunes du 31 mai 2025'),
+      ev('assets/img/intervenant-scene.jpg', 'Prise de parole', 'Intervenant au micro devant un écran de présentation'),
+      ph('reseaux', '[Nom du client]', 'Gestion de page', '1 / 1'),
+      aff('assets/img/affiche-reseau.jpg', 'Comment avoir et bâtir son réseau', 'Affiche', 'Affiche de la conférence Comment avoir et bâtir son réseau'),
+      ev('assets/img/groupe-intervenants.jpg', 'Photo de groupe', 'Photo de groupe des intervenants et organisateurs'),
+      ph('web', '[Nom du client]', 'Site web', '4 / 3'),
+      aff('assets/img/affiche-formation-2024.jpg', 'Formation en développement personnel', 'Affiche · 27 juillet 2024', 'Affiche de la formation en développement personnel du 27 juillet 2024'),
+      ev('assets/img/intervenante-micro.jpg', 'Intervention d’une oratrice', 'Oratrice au micro devant le public'),
+      ph('videos', '[Nom du client]', 'Vidéo institutionnelle', '16 / 9'),
+      aff('assets/img/affiche-masterclass-2024.jpg', 'Masterclass : quelles mentalités pour 2024 ?', 'Affiche · 17 février 2024', 'Affiche de la masterclass du 17 février 2024'),
+      ev('assets/img/public-3.jpg', 'Le public', 'Vue du public pendant une masterclass'),
+      ph('reseaux', '[Nom du client]', 'Gestion de page', '1 / 1'),
+      aff('assets/img/affiche-formation-2023.jpg', 'Formation en développement personnel', 'Affiche · 27 avril 2023', 'Affiche de la formation en développement personnel du 27 avril 2023'),
+      ev('assets/img/pupitre.jpg', 'Au pupitre', 'Intervenante au pupitre devant des invités assis'),
+      aff('assets/img/affiche-masterclass-acte2.jpg', 'Masterclass, acte 2', 'Affiche', 'Affiche de la masterclass en développement personnel, acte 2'),
+      ev('assets/img/salle-pleine-2.jpg', 'Salle pleine', 'Grande salle pleine de participants')
+    ];
+  var tabsEl = document.getElementById('tabs');
+  var galEl = document.getElementById('gallery');
+
+  function make(tag, css, text) {
+    var n = document.createElement(tag);
+    if (css) n.style.cssText = css;
+    if (text) n.textContent = text;
+    return n;
+  }
+
+  function tabStyle(active) {
+    return "min-height:44px; padding:10px 22px; border-radius:999px; border:2px solid #15171C; background:" + (active ? '#15171C' : '#FFFFFF') + "; color:" + (active ? '#F8F5EF' : '#15171C') + "; font-family:'DM Sans',sans-serif; font-size:15px; font-weight:700; cursor:pointer";
+  }
+
+  var buttons = tabDefs.map(function (d) {
+    var b = make('button', tabStyle(false), d[1]);
+    b.type = 'button';
+    b.addEventListener('click', function () { filter = d[0]; render(); });
+    tabsEl.appendChild(b);
+    return b;
+  });
+
+  function render() {
+    buttons.forEach(function (b, i) {
+      var active = tabDefs[i][0] === filter;
+      b.style.cssText = tabStyle(active);
+      b.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+    galEl.textContent = '';
+    all.filter(function (p) { return filter === 'all' || p.cat === filter; }).forEach(function (p) {
+      var fig = make('figure', 'margin:0 0 20px; break-inside:avoid; background:#FFFFFF; border-radius:22px; overflow:hidden');
+      if (p.img) {
+        var im = make('img', 'display:block; width:100%; height:auto');
+        im.src = p.img;
+        im.alt = p.alt || '';
+        fig.appendChild(im);
+      } else {
+        fig.appendChild(make('div', 'aspect-ratio:' + (p.ratio || '4 / 3') + '; background:#E6DFD0; display:flex; align-items:center; justify-content:center; text-align:center; padding:16px; box-sizing:border-box; color:#555A63; font-size:14px', p.placeholder || ''));
+      }
+      var cap = make('figcaption', 'padding:14px 18px 18px');
+      cap.appendChild(make('strong', 'display:block; font-size:16px', p.title));
+      cap.appendChild(make('span', 'font-size:14px; color:#555A63', p.meta));
+      fig.appendChild(cap);
+      galEl.appendChild(fig);
+    });
+  }
+  render();
+})();
+</script>
+
+<!-- APPEL À L'ACTION -->
+<section style="background:#F26B1D; margin-top:40px">
+<div style="max-width:1200px; margin:0 auto; padding:72px 20px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:28px 48px">
+<div style="flex:1 1 460px; min-width:0; color:#15171C">
+<h2 style="margin:0 0 12px; font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:clamp(32px,4vw,52px); line-height:1.04; letter-spacing:-0.03em">Votre projet sera le prochain.</h2>
+<p style="margin:0; max-width:520px; font-size:18px">Parlons de ce que vous voulez réaliser.</p>
+</div>
+<div style="display:flex; flex-wrap:wrap; gap:14px">
+<a href="contact.html" style="display:inline-block; box-sizing:border-box; min-height:48px; padding:14px 28px; border-radius:999px; background:#15171C; color:#F8F5EF; font-weight:700; text-decoration:none">Demander un devis</a>
+<a href="https://wa.me/22898397905" style="display:inline-block; box-sizing:border-box; min-height:48px; padding:12px 26px; border-radius:999px; border:2px solid #15171C; color:#15171C; font-weight:700; text-decoration:none">Écrire sur WhatsApp</a>
+</div>
+</div>
+</section>
+
+<footer style="font-family:'DM Sans',system-ui,sans-serif; background:#15171C; color:#C9CCD3; width:100%">
+<div style="max-width:1200px; margin:0 auto; padding:56px 20px 32px; display:flex; flex-wrap:wrap; gap:40px 64px">
+
+<div style="flex:1 1 280px; min-width:0">
+<div style="display:flex; align-items:center; gap:12px; margin-bottom:16px">
+<span style="width:48px; height:48px; border-radius:50%; background:#F8F5EF; display:flex; align-items:center; justify-content:center; flex:none">
+<img src="assets/img/logo.png" alt="" style="display:block; width:36px; height:36px; object-fit:contain">
+</span>
+<span style="font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:22px; color:#F8F5EF">Ousman Tairou</span>
+</div>
+<p style="margin:0; max-width:340px; font-size:15px">Communication, identité visuelle, digital et événementiel pour les entreprises de Lomé et d'ailleurs.</p>
+</div>
+
+<nav aria-label="Pages du site" style="flex:0 1 180px; min-width:140px">
+<p style="margin:0 0 12px; font-size:13px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#F8F5EF">Pages</p>
+<div style="display:grid; gap:2px; font-size:15px">
+<a href="index.html" style="color:#C9CCD3; padding:6px 0">Accueil</a>
+<a href="services.html" style="color:#C9CCD3; padding:6px 0">Services</a>
+<a href="realisations.html" style="color:#C9CCD3; padding:6px 0">Réalisations</a>
+<a href="academie.html" style="color:#C9CCD3; padding:6px 0">Académie</a>
+<a href="a-propos.html" style="color:#C9CCD3; padding:6px 0">À propos</a>
+<a href="contact.html" style="color:#C9CCD3; padding:6px 0">Contact</a>
+</div>
+</nav>
+
+<div style="flex:0 1 280px; min-width:200px">
+<p style="margin:0 0 12px; font-size:13px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#F8F5EF">Contact</p>
+<div style="display:grid; gap:2px; font-size:15px">
+<a href="https://wa.me/22898397905" style="color:#C9CCD3; padding:6px 0">WhatsApp : +228 98 39 79 05</a>
+<a href="mailto:tairouousman0@gmail.com" style="color:#C9CCD3; padding:6px 0">tairouousman0@gmail.com</a>
+<span style="padding:6px 0">Lomé, Togo</span>
+</div>
+</div>
+
+</div>
+<div style="border-top:1px solid #343944">
+<div style="max-width:1200px; margin:0 auto; padding:20px; font-size:14px">© 2026 Ousman Tairou · Lomé, Togo</div>
+</div>
+</footer>
+
+</div>
+</body>
+</html>
